@@ -285,6 +285,10 @@ footer a svg path {
     footer { 
         margin-bottom: 2em;
     }
+    footer a svg {
+        width: 26px;
+        height: 26px;
+    }
 }
 
 @media only screen and (max-width: 410px) {
