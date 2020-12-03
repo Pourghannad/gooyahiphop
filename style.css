@@ -167,6 +167,7 @@ article aside div {
 article aside div a {
     width: calc(25% - 0.75em);
     height: 35px;
+    cursor: pointer;
     color: #7d7d7d;
     position: relative;
     display: flex;
