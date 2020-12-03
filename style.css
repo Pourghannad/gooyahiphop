@@ -110,16 +110,13 @@ article aside h2 {
     color: #525252;
 }
 
-article aside h2:before {
+article aside h2 svg {
     content: "";
     width: 30px;
     height: 30px;
     margin-right: 0.4em;
-    background-color: #dcdcdc;
-    background-image: url("./assets/playlist.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 24px;
+    background-color: #808080;
+    opacity: 0.3;
 }
 
 article aside ul {
@@ -207,6 +204,7 @@ article aside div a:before {
 article aside div a svg {
     width: 18px;
     height: 18px;
+    opacity: 0.3;
     position: absolute;
     top: -11px;
     right: -2px;
@@ -227,6 +225,7 @@ footer {
 footer a svg {
     width: 30px;
     height: 30px;
+    opacity: 0.3;
 }
 
 footer a:hover svg path {
