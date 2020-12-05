@@ -235,15 +235,9 @@
                     </li>
                 </ul>
                 <div>
-                    <a class="tracklist font-400">
+                    <a class="download font-400">
                         <svg>
                             <use xlink:href="#playlist"></use>
-                        </svg>
-                        Tracklist
-                    </a>
-                    <a target="_blank" class="font-400" href="http://gooyahiphop.info/archive/nooh/Nooh.zip">
-                        <svg>
-                            <use xlink:href="#download"></use>
                         </svg>
                         Download
                     </a>
@@ -307,7 +301,7 @@
     </main>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const trackListButtonEl = document.querySelector("main > article > aside > div > .tracklist");
+            const trackListButtonEl = document.querySelector("main > article > aside > div > .download");
             const trackListContainerEl = document.querySelector("main > article > .track-list-container");
             const trackListBackButtonEl = document.querySelector("main > article > .track-list-container .back");
             if (trackListButtonEl && trackListContainerEl && trackListBackButtonEl) {

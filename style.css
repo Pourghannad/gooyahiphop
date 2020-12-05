@@ -60,10 +60,10 @@ main {
 
 header {
     color: #909090;
-    line-height: 1.15em;
-    font-size: 1.2rem;
+    line-height: 24px;
+    font-size: 18px;
     margin-top: 0;
-    margin-bottom: 3em;
+    margin-bottom: 48px;
     padding-bottom: 0;
     padding-top: 0;
 }
@@ -74,19 +74,19 @@ header a {
 
 header h1 {
     color: #909090;
-    font-size: 1.8rem;
+    font-size: 24px;
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
 header h1 span {
-    font-size: 1.4rem;
+    font-size: 18px;
 }
 
 article {
     position: relative;
     border: 3px solid #dcdcdc;
-    padding: 0.75em;
+    padding: 12px;
     display: flex;
 }
 
@@ -97,8 +97,8 @@ article img {
 }
 
 article aside {
-    margin-top: 0.3em;
-    margin-left: 0.75em;
+    margin-top: 5px;
+    margin-left: 12px;
     width: 100%;
 }
 
@@ -107,7 +107,7 @@ article aside h2 {
     margin-top: 0;
     margin-bottom: 0;
     align-items: center;
-    font-size: 1.1em;
+    font-size: 18px;
     color: #525252;
 }
 
@@ -115,7 +115,7 @@ article aside h2 svg {
     content: "";
     width: 30px;
     height: 30px;
-    margin-right: 0.4em;
+    margin-right: 6px;
     background-color: #808080;
     opacity: 0.3;
 }
@@ -123,7 +123,7 @@ article aside h2 svg {
 article aside ul {
     padding: 0;
     height: 101px;
-    margin: 1em 0;
+    margin: 16px 0;
 }
 
 article aside ul li {
@@ -134,7 +134,7 @@ article aside ul li {
 }
 
 article aside ul li:not(:last-of-type) {
-    margin-bottom: 0.5em;
+    margin-bottom: 8px;
 }
 
 article aside ul li:before {
@@ -142,19 +142,19 @@ article aside ul li:before {
     width: 6px;
     height: 6px;
     background-color: #dcdcdc;
-    margin-right: 0.5em;
+    margin-right: 8px;
 }
 
 article aside ul li b {
     color: currentColor;
-    font-size: 0.9em;
+    font-size: 15px;
     margin-right: 4px;
 }
 article aside ul li a {
     color: currentColor;
 }
 article aside ul li a:not(:first-of-type) {
-    margin-left: 0.25em;
+    margin-left: 4px;
 }
 
 article aside div {
@@ -162,7 +162,7 @@ article aside div {
 }
 
 article aside div a {
-    width: calc(25% - 0.75em);
+    width: calc(25% - 12px);
     height: 35px;
     cursor: pointer;
     color: #7d7d7d;
@@ -172,12 +172,8 @@ article aside div a {
     justify-content: center;
     letter-spacing: 1px;
     border: 2px solid #dcdcdc;
-    font-size: 1em;
+    font-size: 16px;
     transition: letter-spacing 175ms;
-}
-
-article aside div a:first-of-type {
-    margin-right: 16px;
 }
 
 article aside div a:last-of-type svg {
@@ -379,7 +375,7 @@ article .track-list-container ul li > a:hover svg {
 footer {
     display: flex;
     margin-left: -2px;
-    margin-top: 3em;
+    margin-top: 48px;
     justify-content: space-between;
     width: calc(100% + 2px);
 }
@@ -428,10 +424,10 @@ footer a:hover svg {
     }
     article aside div {
         flex-wrap: wrap;
-        margin-top: 74px;
+        margin-top: 70px;
     }
     article aside div a {
-        width: calc(50% - 0.75em);
+        width: calc(100%);
     }
     footer {
         flex-direction: column;
@@ -452,7 +448,7 @@ footer a:hover svg {
         left: unset;
         top: unset;
         transform: unset;
-        margin-top: 1.5rem;
+        margin-top: 24px;
     }
     article img {
         width: 348px;
@@ -464,7 +460,7 @@ footer a:hover svg {
         width: calc(100% - 16px);
     }
     article aside div {
-        margin-top: 24px;
+        margin-top: 48px;
     }
     article .track-list-container ul:before {
         display: none;
@@ -476,13 +472,13 @@ footer a:hover svg {
         top: 18px;
     }
     header {
-        margin-bottom: 2em;
+        margin-bottom: 32px;
     }
     article {
         flex-direction: column;
     }
     footer { 
-        margin-bottom: 2em;
+        margin-bottom: 32px;
     }
     footer a svg {
         width: 26px;
@@ -494,20 +490,17 @@ footer a:hover svg {
     main {
         width: 290px;
     }
-    body {
-        font-size: 0.78rem;
-    }
     header {
-        margin-bottom: 1em;
-        font-size: 1.170rem;
-        line-height: 1.5rem;
+        margin-bottom: 16px;
+        font-size: 18px;
+        line-height: 24px;
     }
     header h1 { 
-        font-size: 1.76rem;
+        font-size: 28px;
     }
     
     header h1 span {
-        font-size: 1.3rem;
+        font-size: 20px;
     }
     article img {
         width: 262px;
@@ -516,7 +509,7 @@ footer a:hover svg {
     }
     article aside {
         width: 100%;
-        margin-top: 0.5rem;
+        margin-top: 8px;
     }
     article aside div {
         width: calc(100% - 16px);
@@ -526,11 +519,8 @@ footer a:hover svg {
         width: 100%;
         margin-right: 0px !important;
     }
-    article aside div a:first-of-type {
-        margin-bottom: 20px;
-    }
     article aside ul {
-        margin-bottom: 0.15em;
+        margin-bottom: 2px;
     }
     article aside h2:before {
         width: 24px;
@@ -549,10 +539,10 @@ footer a:hover svg {
 
 @media only screen and (max-height: 580px) { 
     header {
-        margin-bottom: 1.5rem;
+        margin-bottom: 24px;
     }
     footer { 
-        margin-top: 1.5rem;
-        padding-bottom: 1rem;
+        margin-top: 24px;
+        padding-bottom: 16px;
     }
 }
