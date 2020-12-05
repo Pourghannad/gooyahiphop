@@ -2,21 +2,21 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
-    src: url('./assets/fonts/roboto-300.woff2') format('woff2'),
+    src: url('./assets/fonts/roboto-v20-latin-300.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src: url('./assets/fonts/roboto-400.woff2') format('woff2'),
+    src: url('./assets/fonts/roboto-400.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    src: url('./assets/fonts/roboto-700.woff2') format('woff2'),
+    src: url('./assets/fonts/roboto-v20-latin-700.woff2') format('woff2');
 }
 
 body, html {
@@ -33,17 +33,17 @@ a {
 }
 
 .font-300 {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
 
 .font-400 {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 
 .font-700 {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
 
@@ -56,31 +56,6 @@ main {
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0px);
-}
-
-header {
-    color: #909090;
-    line-height: 24px;
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 48px;
-    padding-bottom: 0;
-    padding-top: 0;
-}
-
-header a { 
-    color: #000;
-}
-
-header h1 {
-    color: #909090;
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 8px;
-}
-
-header h1 span {
-    font-size: 18px;
 }
 
 article {
@@ -104,17 +79,17 @@ article aside {
 
 article aside h2 {
     display: flex;
-    margin-top: 0;
+    margin-top: 16px;
     margin-bottom: 0;
     align-items: center;
-    font-size: 18px;
+    font-size: 1.1em;
     color: #525252;
 }
 
 article aside h2 svg {
     content: "";
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin-right: 6px;
     background-color: #808080;
     opacity: 0.3;
@@ -127,6 +102,7 @@ article aside ul {
 }
 
 article aside ul li {
+    font-size: 0.9em;
     list-style: none;
     display: flex;
     align-items: center;
@@ -147,10 +123,11 @@ article aside ul li:before {
 
 article aside ul li b {
     color: currentColor;
-    font-size: 14px;
+
     margin-right: 4px;
 }
 article aside ul li a {
+    font-size: 1em;
     color: currentColor;
 }
 article aside ul li a:not(:first-of-type) {
@@ -159,6 +136,7 @@ article aside ul li a:not(:first-of-type) {
 
 article aside div {
     display: flex;
+    flex-flow: row-reverse wrap;
 }
 
 article aside div a {
@@ -172,7 +150,7 @@ article aside div a {
     justify-content: center;
     letter-spacing: 1px;
     border: 2px solid #dcdcdc;
-    font-size: 16px;
+    font-size: 1em;
     transition: letter-spacing 175ms;
 }
 
@@ -374,10 +352,38 @@ article .track-list-container ul li > a:hover svg {
 
 footer {
     display: flex;
+    flex-flow:  wrap;
     margin-left: -2px;
-    margin-top: 48px;
+    margin-top: 64px;
     justify-content: space-between;
     width: calc(100% + 2px);
+}
+
+footer .bio {
+    text-align: center;
+    flex-basis:  100%;
+    color: #909090;
+    line-height: 1.15em;
+    font-size: 0.9rem;
+    margin-top: 0;
+    margin-bottom: 4em;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+footer .bio a {
+    color: #000;
+}
+
+footer .bio h1 {
+    color: #909090;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+footer .bio h1 span {
+    font-size: 1.0rem;
 }
 
 footer .mail a {
@@ -471,8 +477,8 @@ footer a:hover svg {
     article .track-list-container ul li > a {
         top: 18px;
     }
-    header {
-        margin-bottom: 32px;
+    footer .bio {
+        flex: 100%;
     }
     article {
         flex-direction: column;
@@ -490,17 +496,16 @@ footer a:hover svg {
     main {
         width: 290px;
     }
-    header {
-        margin-bottom: 16px;
-        font-size: 18px;
-        line-height: 24px;
+    footer .bio {
+        font-size: 1.170rem;
+        line-height: 1.5rem;
     }
-    header h1 { 
-        font-size: 28px;
+    footer .bio h1 {
+        font-size: 1.76rem;
     }
-    
-    header h1 span {
-        font-size: 20px;
+
+    footer .bio h1 span {
+        font-size: 1.3rem;
     }
     article img {
         width: 262px;
@@ -537,12 +542,9 @@ footer a:hover svg {
     
 }
 
-@media only screen and (max-height: 580px) { 
-    header {
-        margin-bottom: 24px;
-    }
-    footer { 
-        margin-top: 24px;
+@media only screen and (max-height: 580px) {
+    footer {
+        margin-top: 64px;
         padding-bottom: 16px;
     }
 }
