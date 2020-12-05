@@ -55,7 +55,7 @@ main {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0px);
 }
 
 header {
@@ -84,6 +84,7 @@ header h1 span {
 }
 
 article {
+    position: relative;
     border: 3px solid #dcdcdc;
     padding: 0.75em;
     display: flex;
@@ -158,7 +159,6 @@ article aside ul li a:not(:first-of-type) {
 
 article aside div {
     display: flex;
-    justify-content: space-between;
 }
 
 article aside div a {
@@ -176,6 +176,10 @@ article aside div a {
     transition: letter-spacing 175ms;
 }
 
+article aside div a:first-of-type {
+    margin-right: 16px;
+}
+
 article aside div a:last-of-type svg {
     width: 22px;
     height: 22px;
@@ -189,7 +193,6 @@ article aside div a:hover {
 article aside div a:hover:before {
     width: 28px;
 }
-
 
 article aside div a:before {
     content: "";
@@ -214,6 +217,165 @@ article aside div a svg {
     color: #dcdcdc;
 }
 
+article .track-list-container {
+    position: absolute;
+    background-color: #ffffff;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transition-property: opacity;
+    transition-duration: 175ms;
+}
+
+article .track-list-container .back {
+    position: absolute;
+    top: -8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #929292;
+    background-color: #fff;
+    padding: 0 6px;
+    left: 10px;
+}
+
+article .track-list-container.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+article .track-list-container ul {
+    height: calc(100% - 32px);
+    list-style: none;
+    display: flex;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 16px;
+    margin: 0px;
+    counter-reset: counter;
+}
+
+
+article .track-list-container ul:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #e3e3e3;
+    margin: auto;
+    top: 0;
+}
+
+article .track-list-container ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    counter-increment: counter;
+    width: calc(50% - 24px);
+}
+
+article .track-list-container ul li:before {
+    content: counter(counter);
+    background-color: #dcdcdc;
+    font-weight: 700;
+    color: #929292;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+article .track-list-container ul li:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #dcdcdc;
+    display: none;
+}
+
+article .track-list-container ul li div {
+    width: calc(100% - 110px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+article .track-list-container ul li div b {
+    font-weight: 400;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #717171;
+}
+
+article .track-list-container ul li div span {
+    font-size: 14px;
+    font-weight: 300;
+    color: #909090;
+}
+
+article .track-list-container ul li span a {
+    color: #525252;
+}
+
+article .track-list-container ul li > a {
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    right: 0;
+    margin-left: 10px;
+    color: #909090;
+    font-size: 12px;
+}
+
+article .track-list-container ul li > a svg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: -4px;
+    opacity: 0;
+    transition: opacity 250ms 100ms;
+}
+
+article .track-list-container ul li > a span {
+    display: inline-block;
+    transition-property: opacity transform;
+    transition-duration: 250ms;
+}
+
+article .track-list-container ul li > a span:first-of-type {
+    transform: translate3d(3px, 0px, 0px);
+}
+
+article .track-list-container ul li > a:hover span:first-of-type {
+    transform: translate3d(20px, 0px, 0px);
+    opacity: 0;
+}
+
+article .track-list-container ul li > a:hover span:last-of-type {
+    transform: translate3d(-20px, 0px, 0px);
+    opacity: 0;
+}
+
+article .track-list-container ul li > a:hover svg {
+    opacity: 0.3;
+}
+
 footer {
     display: flex;
     margin-left: -2px;
@@ -222,20 +384,37 @@ footer {
     width: calc(100% + 2px);
 }
 
+footer .mail a {
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    color: #bbbbbb;
+    transition: color 175ms 110ms;
+}
+
+footer .mail a svg {
+    margin-right: 10px;
+}
+
+footer .social , footer .music-stream {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
 footer a svg {
     width: 30px;
     height: 30px;
     opacity: 0.3;
-}
-
-footer a:hover svg path {
-    opacity: 1;
-}
-
-footer a svg path {
-    fill: #999999;
-    opacity: 0.6;
     transition: opacity 175ms;
+}
+
+footer a:hover {
+    color: #000000;
+}
+
+footer a:hover svg {
+    opacity: 0.5;
 }
 
 @media only screen and (max-width: 900px) {
@@ -249,12 +428,20 @@ footer a svg path {
     }
     article aside div {
         flex-wrap: wrap;
+        margin-top: 74px;
     }
     article aside div a {
         width: calc(50% - 0.75em);
     }
-    article aside div a:nth-of-type(1),article aside div a:nth-of-type(2) {
-        margin-bottom: 19px;
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .mail {
+        margin-bottom: 28px;
+    }
+    footer .social {
+        margin-bottom: 28px;
     }
 }
 
@@ -275,6 +462,18 @@ footer a svg path {
     article aside {
         margin-left: 7px;
         width: calc(100% - 16px);
+    }
+    article aside div {
+        margin-top: 24px;
+    }
+    article .track-list-container ul:before {
+        display: none;
+    }
+    article .track-list-container ul li {
+        width: 100%;
+    }
+    article .track-list-container ul li > a {
+        top: 18px;
     }
     header {
         margin-bottom: 2em;
@@ -321,6 +520,14 @@ footer a svg path {
     }
     article aside div {
         width: calc(100% - 16px);
+        margin-top: 18px;
+    }
+    article aside div a {
+        width: 100%;
+        margin-right: 0px !important;
+    }
+    article aside div a:first-of-type {
+        margin-bottom: 20px;
     }
     article aside ul {
         margin-bottom: 0.15em;
@@ -337,6 +544,7 @@ footer a svg path {
         width: 22px;
         height: 22px;
     }
+    
 }
 
 @media only screen and (max-height: 580px) { 
