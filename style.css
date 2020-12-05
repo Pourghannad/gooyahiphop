@@ -79,7 +79,7 @@ article aside {
 
 article aside h2 {
     display: flex;
-    margin-top: 0;
+    margin-top: 16px;
     margin-bottom: 0;
     align-items: center;
     font-size: 1.1em;
@@ -88,8 +88,8 @@ article aside h2 {
 
 article aside h2 svg {
     content: "";
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin-right: 6px;
     background-color: #808080;
     opacity: 0.3;
