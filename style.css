@@ -521,17 +521,6 @@ footer a:hover svg {
     main {
         width: 290px;
     }
-    footer .bio {
-        font-size: 1.170rem;
-        line-height: 1.5rem;
-    }
-    footer .bio h1 {
-        font-size: 1.76rem;
-    }
-
-    footer .bio h1 span {
-        font-size: 1.3rem;
-    }
     article img {
         width: 262px;
         min-width: 262px;
