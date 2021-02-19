@@ -374,6 +374,26 @@ article .track-list-container ul li > a:hover svg {
     opacity: 0.3;
 }
 
+#noohButton {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+    border: 2px solid #dcdcdc;
+    background: transparent;
+    color: #7d7d7d;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 6px;
+    width: 100px;
+    letter-spacing: 1px;
+    transition: letter-spacing 175ms;
+}
+
+#more:hover {
+    letter-spacing: 2px;
+}
+
 footer {
     display: flex;
     flex-flow:  wrap;

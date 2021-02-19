@@ -74,7 +74,7 @@
         
       </svg>
     <main>
-        <article>
+        <article class="khoon-rial-madar">
             <span class="pin">
                 <svg>
                     <use xlink:href="#pin"></use>
@@ -116,6 +116,7 @@
                 </div>
             </aside>
         </article>
+        <button id="noohButton">Nooh</button>
         <article class="nooh" style="display: none;">
             <img width="206px" height="206px" src="./assets/nooh-album.jpg" alt="Nooh Album" title="Nooh Album" />
             <div class="track-list-container">
@@ -355,12 +356,20 @@
             const trackListButtonEl = document.querySelector("main > article > aside > div > .download");
             const trackListContainerEl = document.querySelector("main > article > .track-list-container");
             const trackListBackButtonEl = document.querySelector("main > article > .track-list-container .back");
+            const khoonRialMadarContainerEl = document.querySelector("main > article.khoon-rial-madar")
+            const noohContainerEl = document.querySelector("main > article.nooh")
+            const noohButtonEl = document.getElementById("noohButton");
             if (trackListButtonEl && trackListContainerEl && trackListBackButtonEl) {
                 trackListButtonEl.addEventListener("click", (e) => {
                     trackListContainerEl.classList.add("show")
                 });
                 trackListBackButtonEl.addEventListener("click", (e) => {
                     trackListContainerEl.classList.remove("show")
+                });
+                noohButtonEl.addEventListener("click", (e) => {
+                    noohButtonEl.style.display = "none";
+                    khoonRialMadarContainerEl.style.display = "none";
+                    noohContainerEl.style.display = "flex";
                 });
             }
         });
