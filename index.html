@@ -74,6 +74,45 @@
         
       </svg>
     <main>
+        <nav>
+            <ul>
+                <li class="font-300">
+                    <a>
+                        Archive
+                        <span></span>
+                    </a>
+                </li>
+                <li class="font-300">
+                    <a>
+                        Gallery
+                        <span></span>
+                    </a>
+                </li>
+                <li class="font-300">
+                    <a>
+                        Video
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="archive-container">
+            <a class="font-400" id="single-button">
+                <svg>
+                    <use xlink:href="#music"></use>
+                </svg>
+                Single Track
+            </a>
+            <a class="font-400" id="album-button">
+                <svg>
+                    <use xlink:href="#playlist"></use>
+                </svg>
+                Album
+            </a>
+        </div>
+        <div class="soon font-700">
+            Soon ...
+        </div>
         <article class="khoon-rial-madar">
             <span class="pin">
                 <svg>
@@ -90,7 +129,7 @@
                 </h2>
                 <ul>
                     <li class="font-300">
-                        <b class="font-700">Producer:</b>
+                        <b class="font-700">Prod by:</b>
                         <a target="_blank" href="https://soundcloud.com/najwabeats">Najwa</a>
                     </li>
                     <li class="font-300">
@@ -116,8 +155,7 @@
                 </div>
             </aside>
         </article>
-        <button id="noohButton">Nooh</button>
-        <article class="nooh" style="display: none;">
+        <article class="nooh">
             <img width="206px" height="206px" src="./assets/nooh-album.jpg" alt="Nooh Album" title="Nooh Album" />
             <div class="track-list-container">
                 <a class="back font-400">
@@ -267,10 +305,10 @@
                 </h2>
                 <ul>
                     <li class="font-300">
-                        <b class="font-700">Producer's:</b>
-                        <a target="_blank" style="font-size: 0.84em;" href="https://soundcloud.com/najwabeats">Najwa</a>,
-                        <a target="_blank" style="font-size: 0.84em;" href="https://soundcloud.com/shemroonii">Shemrooni</a>,
-                        <a target="_blank" style="font-size: 0.8em;" href="https://soundcloud.com/saeed-dehghan">Saeed Dehghan</a>
+                        <b class="font-700">Prod by:</b>
+                        <a target="_blank" href="https://soundcloud.com/najwabeats">Najwa</a>,
+                        <a target="_blank" href="https://soundcloud.com/shemroonii">Shemrooni</a>,
+                        <a target="_blank" href="https://soundcloud.com/saeed-dehghan">Saeed Dehghan</a>
                     </li>
                     <li class="font-300">
                         <b class="font-700">Mixing and Mastering:</b> <a target="_blank" href="https://soundcloud.com/saeed-dehghan">Saeed Dehghan</a>
@@ -357,19 +395,64 @@
             const trackListContainerEl = document.querySelector("main > article > .track-list-container");
             const trackListBackButtonEl = document.querySelector("main > article > .track-list-container .back");
             const khoonRialMadarContainerEl = document.querySelector("main > article.khoon-rial-madar")
-            const noohContainerEl = document.querySelector("main > article.nooh")
-            const noohButtonEl = document.getElementById("noohButton");
+            const noohContainerEl = document.querySelector("main > article.nooh");
+            const navItemsEl = document.querySelectorAll("main > nav > ul > li > a");
+            const archiveContainerEl = document.querySelector("main > .archive-container")
+            const albumButtonEL = document.getElementById("album-button");
+            const singleButtonEL = document.getElementById("single-button");
+            for (let i = 0; i < navItemsEl.length; i++) {
+                navItemsEl[i].addEventListener("mousemove", (e) => {
+                    if (!e.target.classList.contains("active")) {
+                        e.target.classList.add("hover");
+                        e.target.querySelector("span").style = `transform: translate3d(${e.offsetX + 3}px, ${((e.offsetY/2) - (e.target.offsetHeight/2)) - 6}px, 0px)`;
+                    }
+                });
+                navItemsEl[i].addEventListener("mouseout", (e) => {
+                    if (!e.target.classList.contains("active")) {
+                        e.target.classList.remove("hover");
+                        e.target.querySelector("span").style = `transform: translate3d(0px,0px, 0px)`;
+                    }
+                });
+
+                navItemsEl[i].addEventListener("click", (e) => {
+                    if (document.body.hasAttribute("class")) {
+                        document.body.removeAttribute("class");
+                        const a  = document.querySelectorAll("nav ul li a:not(.active)");
+                        for (let k = 0; k < navItemsEl.length; k++) {
+                            if (navItemsEl[k] !== e.target) {
+                                navItemsEl[k].classList.remove("active");
+                                navItemsEl[k].classList.remove("hover");
+                                navItemsEl[k].querySelector("span").style = `transform: translate3d(0px, 0px, 0px) skew(0deg) scale(1)`;
+                            }
+                        }
+                    }
+                    if (!e.target.classList.contains("active")) {
+                        e.target.classList.add("active");
+                        e.target.querySelector("span").style = `transform: translate3d(${e.offsetX + 3}px, ${((e.offsetY/2) - (e.target.offsetHeight/2)) - 6}px, 0px) skew(60deg) scale(40) `;
+                        document.body.classList.add(e.target.text.trim().toLowerCase())
+                    } else {
+                        e.target.classList.remove("active");
+                        e.target.querySelector("span").style = `transform: translate3d(0px, 0px, 0px) skew(0deg) scale(1)`;
+                        e.target.classList.remove("hover");
+                        document.body.removeAttribute("class");
+                    }
+                })
+
+            }
+            albumButtonEL.addEventListener("click", () => {
+                document.body.removeAttribute("class");
+                document.body.classList.add("nooh");
+            });
+            singleButtonEL.addEventListener("click", () => {
+                document.body.removeAttribute("class");
+                document.body.classList.add("khoon-rial-madar");
+            });
             if (trackListButtonEl && trackListContainerEl && trackListBackButtonEl) {
                 trackListButtonEl.addEventListener("click", (e) => {
                     trackListContainerEl.classList.add("show")
                 });
                 trackListBackButtonEl.addEventListener("click", (e) => {
                     trackListContainerEl.classList.remove("show")
-                });
-                noohButtonEl.addEventListener("click", (e) => {
-                    noohButtonEl.style.display = "none";
-                    khoonRialMadarContainerEl.style.display = "none";
-                    noohContainerEl.style.display = "flex";
                 });
             }
         });
