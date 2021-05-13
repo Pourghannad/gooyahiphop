@@ -417,7 +417,6 @@
                 navItemsEl[i].addEventListener("click", (e) => {
                     if (document.body.hasAttribute("class")) {
                         document.body.removeAttribute("class");
-                        const a  = document.querySelectorAll("nav ul li a:not(.active)");
                         for (let k = 0; k < navItemsEl.length; k++) {
                             if (navItemsEl[k] !== e.target) {
                                 navItemsEl[k].classList.remove("active");
