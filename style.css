@@ -105,11 +105,25 @@ nav ul li a:after {
 .khoon-rial-madar {
     transition: opacity 150ms;
 }
+
+article.khoon-rial-madar {
+    display: none;
+}
 body.khoon-rial-madar .khoon-rial-madar .pin {
     display: none;
 }
 
-body.gallery .khoon-rial-madar, body.archive .khoon-rial-madar, body.video .khoon-rial-madar {
+body.khoon-rial-madar .khoon-rial-madar  {
+    display: flex;
+}
+
+body.khoon-rial-madar .tanha-miras  {
+    display: none;
+}
+
+body.gallery .khoon-rial-madar, body.archive .khoon-rial-madar, body.video .khoon-rial-madar,
+body.gallery .tanha-miras, body.archive .tanha-miras, body.video .tanha-miras
+{
     opacity: 0;
     visibility: hidden;
 }
@@ -125,6 +139,11 @@ body.nooh article.nooh {
 }
 
 body.nooh .khoon-rial-madar {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.nooh .tanha-miras {
     opacity: 0;
     visibility: hidden;
 }
@@ -686,7 +705,7 @@ nav ul li a:after {
     transition: all 150ms;
 }
 
-body.archive .khoon-rial-madar {
+body.archive .khoon-rial-madar, body.archive .tanha-miras {
     opacity: 0;
     visibility: hidden;
 }
