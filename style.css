@@ -1271,6 +1271,8 @@ footer a:hover svg {
     }
     article.gallery a {
         padding-right: 0px;
+    }
+    article.gallery a:not(:last-of-type) {
         margin-bottom: 20px;
     }
     article.gallery a img {
@@ -1385,8 +1387,14 @@ footer a:hover svg {
     .soon , .archive-container {
         max-width: 290px;
     }
-    article.nooh {
+    article.nooh, article.gallery {
         max-width: 260px;
+    }
+    article.gallery {
+        max-height: 500px;
+    }
+    article.gallery a img {
+        height: 248px;
     }
     article.nooh aside ul li a {
         font-size: 13px;
